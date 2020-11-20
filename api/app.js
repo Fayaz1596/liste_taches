@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
-const { mongoose } = require('./db/mongoose');
+const { mongoose } = require('./bdd/mongoose');
 
 // Charger dans les modèles "mongoose"
-const { Liste, Tache, Utilisateur } = require('./db/models');
+const { Liste, Tache, Utilisateur } = require('./bdd/modeles');
 
 const jwt = require('jsonwebtoken');
 
