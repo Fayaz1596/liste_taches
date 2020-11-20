@@ -1,0 +1,27 @@
+<div class="contenu_centre">
+    <div class="tache_gestionnaire_conteneur">
+        <div class="info py-2 px-5 has-background-black"></div>
+
+        <div class="barre_laterale has-background-black p-5"></div>
+
+        <div class="tache_liste_conteneur"></div>
+    </div>
+    
+    <div class="modal_box p-5">
+        <h1 class="title has-text-centered">Créer une nouvelle tâche</h1>
+
+        <textarea #tacheTitreEntree class="textarea has-fixed-size has-background-black" type="text" placeholder="Titre de la tâche"></textarea>
+
+        <div class="buttons is-centered mt-4 mb-0">
+            <button class="button" routerLink="/">Retour</button>
+            <button class="button is-primary has-text-white" (click)="creerTache(tacheTitreEntree.value)">Ajouter</button>
+        </div>
+
+        <article class="message is-small">
+            <div class="message-header has-text-weight-medium p-0 mt-4">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p class="pl-2">Le titre est requis !</p>
+            </div>
+        </article>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="contenu_centre">
+    <div class="box_blanc p-5">
+
+        <h1 class="title has-text-primary has-text-centered">Créer un compte</h1>
+
+        <div class="field">
+          <p class="control has-icons-left">
+            <input #nomEntree class="input has-background-black has-text-white" type="text" placeholder="Nom d'utilisateur">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+        
+        <div class="field">
+          <p class="control has-icons-left">
+            <input #emailEntree class="input has-background-black has-text-white" type="email" placeholder="E-mail">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control has-icons-left">
+            <input #motdepasseEntree class="input has-background-black has-text-white" type="password" placeholder="Mot de passe">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control has-text-centered">
+            <button class="button is-primary mt-2" (click)="inscriptionBoutonClic(nomEntree.value, emailEntree.value, motdepasseEntree.value)">Inscription</button>
+          </p>
+        </div>
+
+        <p class="mt-4 has-text-centered" id="connecter">
+          Déjà un compte ? <a routerLink="/connexion">Se connecter</a> maintenant.
+        </p>
+
+        <article class="message is-small">
+          <div class="message-header has-text-weight-medium p-0 mt-4">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p class="pl-2">{{ erreur }}</p>
+          </div>
+        </article>
+    </div>
+</div>

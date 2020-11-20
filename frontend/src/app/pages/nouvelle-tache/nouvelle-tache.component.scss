@@ -1,0 +1,49 @@
+@import '../../../main-styles.scss';
+
+.tache_gestionnaire_conteneur
+{
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+        "info info info"
+        "liste tache tache"
+    ;
+    width: 100%;
+    height: 100%;
+    max-width: 960px;
+    max-height: 540px;
+    box-shadow: $box-shadow;
+    filter: blur(5px);
+    opacity: 0.3;
+}
+
+.info
+{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    grid-area: info;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barre_laterale
+{
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 6px;
+    background-color: black;
+    grid-area: liste;
+}
+
+.tache_liste_conteneur
+{
+    display: flex;
+    flex-direction: column;
+    border-bottom-right-radius: 6px;
+    background: $dark-orange;
+    flex-grow: 1;
+    grid-area: tache;
+    max-height: 490px;
+}

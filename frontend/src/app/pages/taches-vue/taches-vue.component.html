@@ -1,0 +1,115 @@
+<div class="contenu_centre">
+    <div class="tache_gestionnaire_conteneur">
+        <div class="info py-2 px-5 has-background-black">
+            <p class="has-text-white is-size-6 has-text-centered">
+                Bienvenue dans le gestionnaire de tâches <span class="has-text-weight-bold">{{ nom }}</span> !
+            </p>
+            <p class="has-text-white is-size-6 has-text-centered">
+                <i class="fas fa-user pb-1 pr-2"></i> 
+                <span>{{ email }}</span>               
+                <button class="button is-ghost has-text-white has-text-weight-medium ml-3" (click)="deconnexion()">Déconnexion</button>
+            </p>
+        </div>
+
+        <div class="barre_laterale has-background-black p-5">
+            <div class="barre_haut mb-4">
+                <h1 class="title has-text-primary">Listes</h1>
+
+                <button class="button is-primary mr-1" routerLink="/nouvelle_liste">
+                    <span class="icon is-small">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                </button>
+
+                <div *ngIf="taches" class="dropdown is-hoverable has-background-dark ml-1">
+                    <div class="dropdown-trigger">
+                        <button class="button is-ghost">
+                            <span class="icon is-small">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content has-background-dark">
+                            <a [routerLink]="['/modifier_liste', selectionneListeId]" class="dropdown-item has-text-white has-text-weight-medium">Modifier la liste</a>
+                            <a class="dropdown-item has-text-danger has-text-weight-medium" (click)="supprimerClicListe()">Supprimer la liste</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!taches" class="dropdown is-hoverable has-background-dark ml-1">
+                    <div class="dropdown-trigger">
+                        <button class="button is-ghost" disabled>
+                            <span class="icon is-small">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="liste_menu pr-1 mt-2" (mouseenter)="survolElement($event, 'liste')" (mouseleave)="nonSurvolElement($event, 'liste')">
+                <!-- Éléments de listes -->
+                <ng-container *ngIf="listes">
+                    <a class="liste_menu_objet" *ngFor="let liste of listes" [routerLink]="['/listes', liste._id]" routerLinkActive="est_active">
+                        <p class="noselect has-text-white has-text-weight-medium">{{ liste.titre }}</p>
+                        <p class="noselect has-text-white">{{ liste.sousTitre }}</p>
+                    </a>
+                </ng-container>
+                
+                <div *ngIf="listes.length === 0" class="pas_taches">
+                    <h3 class="vide_texte has-text-centered">Cliquez sur le bouton "+" pour ajouter une ou plusieurs liste(s).</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="tache_liste_conteneur p-5">
+            <div *ngIf="taches" class="barre_haut mb-4">
+                <h1 class="title has-text-primary">Tâches</h1>
+                <button class="circle-add-button button is-primary" routerLink="./nouvelle_tache">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <div *ngIf="!taches" class="barre_haut mb-4">
+                <h1 class="title has-text-primary">Tâches</h1>
+                <button class="circle-add-button button is-primary" routerLink="./nouvelle_tache" disabled>
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <div *ngIf="taches" class="taches" (mouseenter)="survolElement($event, 'tache')" (mouseleave)="nonSurvolElement($event, 'tache')">
+                <!-- Éléments de tâches -->
+                <div *ngIf="taches.length !== 0">
+                    <div class="tache has-background-black my-2 ml-1 mr-2" *ngFor="let tache of taches; let i = index" (click)="clicTache(tache)" [ngClass]="{ 'termine': tache.termine }">
+                        <div class="tache_texte has-text-white">
+                            <p class="noselect pr-4">{{ tache.titre }}</p>
+                        </div>
+                        
+                        <div class="tache_boutons">
+                            <button class="button mr-1 is-warning" [routerLink]="['/listes', selectionneListeId, 'modifier_tache', tache._id]">
+                                <div class="icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                            </button>
+
+                            <button class="button ml-1 is-danger" (click)="supprimerClicTache(tache._id)">
+                                <div class="icon">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="vide_texte" *ngIf="taches.length === 0">Cliquez sur le bouton "+" pour ajouter une ou plusieurs tâche(s).</h3>
+            </div>
+
+            <div *ngIf="!taches" class="pas_taches">
+                <h3 class="vide_texte">Veuillez sélectionner une liste dans la barre latérale.</h3>
+            </div>
+        </div>
+    </div>
+</div>
