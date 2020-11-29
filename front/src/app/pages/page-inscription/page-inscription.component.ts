@@ -32,12 +32,33 @@ export class PageInscriptionComponent implements OnInit
       }
       );
     
-    if(nom === "" && email === "" && motdepasse === "")
-    {
-      this.erreur = "Tous les champs sont requis !";
-      this.message = this.elementRef.nativeElement.querySelector('.message');
-      this.message.style.display = 'flex';
-    }
+      if(!nom || !email || !motdepasse)
+      {
+        if(nom === "")
+        {
+          this.erreur = "Le nom est requis !";
+          this.message = this.elementRef.nativeElement.querySelector('.message');
+          this.message.style.display = 'flex';
+        }
+        if(email === "")
+        {
+          this.erreur = "L'e-mail est requis !";
+          this.message = this.elementRef.nativeElement.querySelector('.message');
+          this.message.style.display = 'flex';
+        }
+        if(motdepasse === "")
+        {
+          this.erreur = "Le mot de passe est requis !";
+          this.message = this.elementRef.nativeElement.querySelector('.message');
+          this.message.style.display = 'flex';
+        }
+        if(nom === "" && email === "" && motdepasse === "")
+        {
+          this.erreur = "Tous les champs sont requis !";
+          this.message = this.elementRef.nativeElement.querySelector('.message');
+          this.message.style.display = 'flex';
+        }
+      }
     else
     {
       this.message.style.display = 'none';

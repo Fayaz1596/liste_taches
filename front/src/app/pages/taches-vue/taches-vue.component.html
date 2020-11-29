@@ -57,11 +57,11 @@
                         <p class="noselect has-text-white has-text-weight-medium">{{ liste.titre }}</p>
                         <p class="noselect has-text-white">{{ liste.sousTitre }}</p>
                     </a>
+
+                    <div *ngIf="listes.length === 0" class="pas_taches">
+                        <h3 class="vide_texte has-text-centered">Cliquez sur le bouton "+" pour ajouter une ou plusieurs liste(s).</h3>
+                    </div>
                 </ng-container>
-                
-                <div *ngIf="listes.length === 0" class="pas_taches">
-                    <h3 class="vide_texte has-text-centered">Cliquez sur le bouton "+" pour ajouter une ou plusieurs liste(s).</h3>
-                </div>
             </div>
         </div>
 
@@ -83,7 +83,7 @@
             <div *ngIf="taches" class="taches" (mouseenter)="survolElement($event, 'tache')" (mouseleave)="nonSurvolElement($event, 'tache')">
                 <!-- Éléments de tâches -->
                 <div *ngIf="taches.length !== 0">
-                    <div class="tache has-background-black my-2 ml-1 mr-2" *ngFor="let tache of taches; let i = index" (click)="clicTache(tache)" [ngClass]="{ 'termine': tache.termine }">
+                    <div class="tache has-background-black ml-1 mr-2" *ngFor="let tache of taches; let i = index" (click)="clicTache(tache)" [ngClass]="{ 'termine': tache.termine }">
                         <div class="tache_texte has-text-white">
                             <p class="noselect pr-4">{{ tache.titre }}</p>
                         </div>

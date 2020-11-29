@@ -66,6 +66,17 @@
         scrollbar-color: transparent transparent;
         transition: scrollbar-color 0.2s ease;
 
+        &::-webkit-scrollbar
+        {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb
+        {
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+
         .vide_texte
         {
             font-size: 18px;
@@ -79,6 +90,11 @@
         &.scroll
         {
             scrollbar-color: $orange transparent;
+        }
+
+        &.scroll::-webkit-scrollbar-thumb
+        {
+            background: $orange;
         }
     }
 
@@ -98,6 +114,17 @@
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
     transition: scrollbar-color 0.2s ease;
+
+    &::-webkit-scrollbar
+    {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
 
     .liste_menu_objet
     {
@@ -137,6 +164,11 @@
         scrollbar-color: $orange transparent;
     }
 
+    &.scroll::-webkit-scrollbar-thumb
+    {
+        background: $orange;
+    }
+
     .pas_taches
     {
         font-size: 15px;
@@ -153,6 +185,8 @@
     cursor: pointer;  
     opacity: 1;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
+    margin-top: 5px;
+    margin-bottom: 8px;
 
     &:hover
     {
