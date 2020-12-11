@@ -3,8 +3,8 @@
 .tache_gestionnaire_conteneur
 {
     display: grid;
-    grid-template-columns: 260px 1fr 1fr;
-    grid-template-rows: 50px 1fr;
+    grid-template-columns: 275px 1fr 1fr;
+    grid-template-rows: 60px 1fr;
     grid-template-areas: 
         "info info info"
         "liste tache tache"
@@ -22,8 +22,12 @@
     border-top-right-radius: 6px;
     grid-area: info;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
+    p
+    {
+        width: 50%;
+    }
     
     button
     {
@@ -39,6 +43,7 @@
     background-color: black;
     grid-area: liste;
     max-height: 490px;
+    border-top: 2px solid #d66903;
 
     button
     {
@@ -55,6 +60,7 @@
     flex-grow: 1;
     grid-area: tache;
     max-height: 490px;
+    border-top: 2px solid #d66903;
 
     .taches
     {
@@ -325,3 +331,7 @@
     flex-grow: 1;
 }
 
+.logo
+{
+    width: 40px;
+}

@@ -1,10 +1,11 @@
 <div class="contenu_centre">
     <div class="tache_gestionnaire_conteneur">
-        <div class="info py-2 px-5 has-background-black">
-            <p class="has-text-white is-size-6 has-text-centered">
-                Bienvenue dans le gestionnaire de tâches <span class="has-text-weight-bold">{{ nom }}</span> !
+        <div class="info px-5 has-background-black is-clipped">
+            <p class="has-text-white is-size-6 has-text-left">
+                Bienvenue <span class="has-text-weight-bold">{{ nom }}</span> !
             </p>
-            <p class="has-text-white is-size-6 has-text-centered">
+            <img src="../../../assets/img/logo.png" class="logo">
+            <p class="has-text-white is-size-6 has-text-right">
                 <i class="fas fa-user pb-1 pr-2"></i> 
                 <span>{{ email }}</span>               
                 <button class="button is-ghost has-text-white has-text-weight-medium ml-3" (click)="deconnexion()">Déconnexion</button>
