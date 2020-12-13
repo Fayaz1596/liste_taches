@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Liste } from 'src/app/modeles/liste.modele';
-import { TacheService } from 'src/app/tache.service';
+import { TacheService } from 'src/app/services/tache.service';
 
 @Component({
   selector: 'app-modifier-liste',

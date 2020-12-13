@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Tache } from './modeles/tache.modele';
+import { Tache } from '../modeles/tache.modele';
 import { RequeteWebService } from './requete-web.service';
 
 @Injectable({

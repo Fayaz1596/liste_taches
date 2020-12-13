@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Tache } from 'src/app/modeles/tache.modele';
-import { TacheService } from 'src/app/tache.service';
+import { TacheService } from 'src/app/services/tache.service';
 
 @Component({
   selector: 'app-modifier-tache',

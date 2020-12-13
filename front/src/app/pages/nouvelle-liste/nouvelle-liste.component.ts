@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TacheService } from 'src/app/tache.service';
+import { TacheService } from 'src/app/services/tache.service';
 import { Liste } from 'src/app/modeles/liste.modele';
 
 @Component({

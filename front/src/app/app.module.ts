@@ -8,7 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NouvelleListeComponent } from './pages/nouvelle-liste/nouvelle-liste.component';
 import { NouvelleTacheComponent } from './pages/nouvelle-tache/nouvelle-tache.component';
 import { PageConnexionComponent } from './pages/page-connexion/page-connexion.component';
-import { WebRequeteIntercepteur } from './web-requete-intercepteur.service';
+import { WebRequeteIntercepteur } from './services/web-requete-intercepteur.service';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { ModifierListeComponent } from './pages/modifier-liste/modifier-liste.component';
 import { ModifierTacheComponent } from './pages/modifier-tache/modifier-tache.component';

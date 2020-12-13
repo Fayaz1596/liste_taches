@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Liste } from 'src/app/modeles/liste.modele';
 import { Tache } from 'src/app/modeles/tache.modele';
-import { TacheService } from 'src/app/tache.service';
+import { TacheService } from 'src/app/services/tache.service';
 
 @Component({
   selector: 'app-taches-vue',

@@ -1,7 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-page-inscription',
