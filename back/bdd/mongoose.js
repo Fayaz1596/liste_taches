@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
 mongoose
-    //.connect('mongodb://bdd:27017/listeTaches', { useNewUrlParser: true, useUnifiedTopology: true})
-    .connect('mongodb://localhost:27017/listeTaches', { useNewUrlParser: true, useUnifiedTopology: true})
+    .connect('mongodb://bdd:27017/listeTaches', { useNewUrlParser: true, useUnifiedTopology: true})
+    //.connect('mongodb://localhost:27017/listeTaches', { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => 
     {
         console.log("Connecté avec succès à la base de données MongoDB !");
