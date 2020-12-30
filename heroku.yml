@@ -1,0 +1,5 @@
+build:
+  docker:
+    web_angular: front/Dockerfile
+    web_express: back/Dockerfile
+  
